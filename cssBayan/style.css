@@ -1,0 +1,120 @@
+@font-face {
+    font-family: "Inika";
+    src: url(./assets/fonts/Inika-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(./assets/fonts/Inter-Regular.ttf);
+}
+
+body {
+    width: 90%;
+    height: 100vh;
+    margin: 5% auto;
+    cursor: pointer;
+}
+
+.memes {
+    width: 100%;
+    height: 60%;
+    color: blue;
+}
+
+.meme {
+    width: 100%;
+    height: 20%;
+    border-bottom: 3px solid black;
+    display: flex;
+    align-items: center;
+    font-family: "Inter";
+    font-size: 24px;
+    justify-content: space-between;
+    font-weight: 800;
+    transition: 1s;
+}
+
+
+.memes:hover .cross{
+        visibility: visible;
+        margin-top: 1%;
+}
+
+.meme:hover {
+    color: black;
+    height: 80%;
+    align-items: flex-start;
+}
+
+.last-meme {
+    border-bottom: none;
+}
+
+.title {
+    width: 100%;
+    height: 10%;
+    border-bottom: 5px double black;
+    font-family: "Inika";
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    font-size: 36px;
+}
+
+.cross {
+    width: 24px;
+    height: 24px;
+    margin-right: 1%;
+    visibility: hidden;
+}
+
+.cross-select{
+    width: 24px;
+    height: 24px;
+    margin-right: 1%;
+    display: none;
+}
+
+
+.meme-img {
+    width: 200px;
+    height: 150px;
+    margin-right: 15%;
+    margin-top: 1.5%;
+    visibility: hidden;
+    transition: 0.7s;
+}
+
+.meme:hover .meme-img{
+    visibility: visible;
+    transform: scale(2);
+    margin-top: 5%;
+}
+
+.memes:hover {
+    color: black;
+}
+
+.meme:hover .cross{
+    display: none;
+}
+
+.meme:hover .cross-select{
+    display: block;
+    margin-top: 1%;
+}
+
+
+@media (max-width: 760px){
+   .meme {
+    font-size: 20px;
+   }
+}
+
+@media (max-width: 360px){
+    .meme {
+     font-size: 16px;
+    }
+ }
+
