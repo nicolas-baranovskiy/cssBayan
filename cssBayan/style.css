@@ -34,6 +34,7 @@ body {
     transition: 1s;
 }
 
+
 .memes:hover .cross{
         visibility: visible;
         margin-top: 1%;
@@ -75,32 +76,45 @@ body {
     display: none;
 }
 
-.meme:active .cross-select{
-    margin-top: 1%;
-    display: block;
-}
-
-.meme:active .cross{
-    display: none;
-}
-
 
 .meme-img {
-    width: 400px;
-    height: 300px;
+    width: 200px;
+    height: 150px;
     margin-right: 15%;
     margin-top: 1.5%;
-    display: none;
+    visibility: hidden;
+    transition: 0.7s;
 }
 
 .meme:hover .meme-img{
-    display: block;
+    visibility: visible;
+    transform: scale(2);
+    margin-top: 5%;
 }
 
 .memes:hover {
     color: black;
 }
 
+.meme:hover .cross{
+    display: none;
+}
+
+.meme:hover .cross-select{
+    display: block;
+    margin-top: 1%;
+}
 
 
+@media (max-width: 760px){
+   .meme {
+    font-size: 20px;
+   }
+}
+
+@media (max-width: 360px){
+    .meme {
+     font-size: 16px;
+    }
+ }
 
