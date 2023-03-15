@@ -1,0 +1,182 @@
+@font-face {
+    font-family: "Inika";
+    src: url(./assets/fonts/Inika-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(./assets/fonts/Inter-Regular.ttf);
+}
+
+body {
+    width: 90%;
+    height: 100vh;
+    margin: 5% auto;
+    cursor: pointer;
+}
+
+.title {
+    width: 100%;
+    border-bottom: 0.3rem double black;
+    font-family: "Inika";
+    margin: 0;
+
+    font-size: 2rem;
+    font-style: italic;
+    background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+
+.memes {
+    width: 100%;
+    color: black;
+    background-color: rgb(218, 218, 218);
+}
+
+.meme-info {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.meme-img {
+    width: 0.05rem;
+    height: 0.05rem;
+    transition: 1s;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    visibility: hidden;
+}
+
+.cross {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1%;
+    margin-top: 1%;
+    transition: 1s;
+}
+
+.inpute-meme {
+    border-bottom: 0.1rem solid black;
+}
+
+input {
+    display: none;
+}
+
+input[type="radio"] + .inpute-meme {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Inter";
+    font-size: 1.5rem;
+    font-weight: 800;
+    transition: 1s;
+
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + .inpute-meme >.meme-img {
+    width: 22rem;
+    height: 16rem;
+    visibility: visible;
+}
+
+input[type="radio"]:checked + .inpute-meme >.meme-info>.cross {
+    transform: rotate(45deg);
+}
+
+.last-meme {
+    border-bottom: none;
+}
+
+
+@media (hover: hover){
+    .memes {
+        color: blue;
+    }
+    .memes:hover {
+        color: black;
+    }
+
+    .cross {
+        visibility: hidden;
+    }
+
+    .memes:hover .cross {
+        visibility: visible;
+    }
+    
+
+    input[type="radio"]:hover + .inpute-meme>.meme-img {
+        width: 22rem;
+        height: 16rem;
+        visibility: visible;
+    }
+
+    input[type="radio"]:hover + .inpute-meme>.meme-info>.cross {
+        transform: rotate(45deg);
+    }
+}
+
+
+@media (max-width: 980px){
+    input[type="radio"] + .inpute-meme {
+        font-size: 1.2rem;
+     }
+
+    .title {
+        font-size: 1.6rem;     
+}
+
+.cross {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+input[type="radio"]:checked + .inpute-meme>.meme-img {
+    width: 16rem;
+    height: 10rem;
+    visibility: visible;
+}
+
+input[type="radio"]:hover + .inpute-meme>.meme-img {
+    width: 16rem;
+    height: 10rem;
+    visibility: visible;
+}
+}
+
+
+
+@media (max-width: 360px){
+    input[type="radio"] + .inpute-meme {
+       font-size: 1rem;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    
+}
+
+.cross {
+    width: 1rem;
+    height: 1rem;
+}
+
+input[type="radio"]:checked + .inpute-meme>.meme-img {
+    width: 10rem;
+    height: 6rem;
+    visibility: visible;
+}
+
+input[type="radio"]:hover + .inpute-meme>.meme-img {
+    width: 10rem;
+    height: 6rem;
+    visibility: visible;
+}
+ }
+
