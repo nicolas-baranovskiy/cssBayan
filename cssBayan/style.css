@@ -17,32 +17,21 @@ body {
 
 .title {
     width: 100%;
-    border-bottom: 5px double black;
+    border-bottom: 0.3rem double black;
     font-family: "Inika";
     margin: 0;
 
-    display: flex;
-    align-items: center;
     font-size: 2rem;
     font-style: italic;
+    background-color: rgb(46, 46, 46);
+    color: white;
 }
 
 
 .memes {
     width: 100%;
-    color: blue;
-}
-
-.meme {
-    width: 100%;
-    border-bottom: 3px solid black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Inter";
-    font-size: 1.5rem;
-    font-weight: 800;
-    transition: 1s;
+    color: black;
+    background-color: rgb(218, 218, 218);
 }
 
 .meme-info {
@@ -53,120 +42,141 @@ body {
 }
 
 .meme-img {
-    width: 10px;
-    height: 10px;
-    transition: 0.7s;
+    width: 0.05rem;
+    height: 0.05rem;
+    transition: 1s;
     margin-top: 1%;
     margin-bottom: 1%;
     visibility: hidden;
 }
 
-.memes:hover .cross{
-        visibility: visible;
-        margin-top: 1%;
+.cross {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1%;
+    margin-top: 1%;
+    transition: 1s;
 }
 
-.meme:hover {
-    color: black;
+.inpute-meme {
+    border-bottom: 0.1rem solid black;
+}
+
+input {
+    display: none;
+}
+
+input[type="radio"] + .inpute-meme {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Inter";
+    font-size: 1.5rem;
+    font-weight: 800;
+    transition: 1s;
+
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + .inpute-meme >.meme-img {
+    width: 22rem;
+    height: 16rem;
+    visibility: visible;
+}
+
+input[type="radio"]:checked + .inpute-meme >.meme-info>.cross {
+    transform: rotate(45deg);
 }
 
 .last-meme {
     border-bottom: none;
 }
 
-.cross {
-    width: 24px;
-    height: 24px;
-    margin-right: 1%;
-    margin-top: 1%;
-    transition: 0.5s;
-    visibility: hidden;
-}
 
-.cross-first {
-    width: 24px;
-    height: 24px;
-    margin-right: 1%;
-    margin-top: 1%;
-    transition: 0.5s;
-    transform: rotate(45deg);
-    visibility: hidden;
-}
+@media (hover: hover){
+    .memes {
+        color: blue;
+    }
+    .memes:hover {
+        color: black;
+    }
 
-.meme-img-first {
-    width: 350px;
-    height: 250px;
-    transition: 0.7s;
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
+    .cross {
+        visibility: hidden;
+    }
 
+    .memes:hover .cross {
+        visibility: visible;
+    }
+    
 
-.meme:hover .meme-img{
-    visibility: visible;
-    width: 350px;
-    height: 250px;
-}
+    input[type="radio"]:hover + .inpute-meme>.meme-img {
+        width: 22rem;
+        height: 16rem;
+        visibility: visible;
+    }
 
-.meme:hover .cross{
-    visibility: visible;
-    transform: rotate(45deg);
-}
-
-.memes:hover .cross-first{
-    visibility: visible;
-}
-
-
-.memes:hover {
-    color: black;
-}
-
-.meme:hover .cross-select{
-    display: block;
-    margin-top: 1%;
+    input[type="radio"]:hover + .inpute-meme>.meme-info>.cross {
+        transform: rotate(45deg);
+    }
 }
 
 
 @media (max-width: 980px){
-   .meme {
+    input[type="radio"] + .inpute-meme {
         font-size: 1.2rem;
-}
-
-   .meme:hover .meme-img{
-        visibility: visible;
-        width: 250px;
-        height: 150px;
-}
-    .meme-img-first {
-        width: 250px;
-        height: 150px;
-}
+     }
 
     .title {
-        font-size: 1.8rem;
-        
+        font-size: 1.6rem;     
+}
+
+.cross {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+input[type="radio"]:checked + .inpute-meme>.meme-img {
+    width: 16rem;
+    height: 10rem;
+    visibility: visible;
+}
+
+input[type="radio"]:hover + .inpute-meme>.meme-img {
+    width: 16rem;
+    height: 10rem;
+    visibility: visible;
 }
 }
+
+
 
 @media (max-width: 360px){
-    .meme {
-     font-size: 1rem;
+    input[type="radio"] + .inpute-meme {
+       font-size: 1rem;
     }
 
-    .meme:hover .meme-img{
-        visibility: visible;
-        width: 150px;
-        height: 90px;
-}
-    .meme-img-first {
-        width: 150px;
-        height: 90px;
+    .title {
+        font-size: 1.4rem;
+    
 }
 
-    .title {
-        font-size: 1.6rem;
-    
+.cross {
+    width: 1rem;
+    height: 1rem;
+}
+
+input[type="radio"]:checked + .inpute-meme>.meme-img {
+    width: 10rem;
+    height: 6rem;
+    visibility: visible;
+}
+
+input[type="radio"]:hover + .inpute-meme>.meme-img {
+    width: 10rem;
+    height: 6rem;
+    visibility: visible;
 }
  }
 
