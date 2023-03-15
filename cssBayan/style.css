@@ -15,25 +15,51 @@ body {
     cursor: pointer;
 }
 
+.title {
+    width: 100%;
+    border-bottom: 5px double black;
+    font-family: "Inika";
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+
 .memes {
     width: 100%;
-    height: 60%;
     color: blue;
 }
 
 .meme {
     width: 100%;
-    height: 20%;
     border-bottom: 3px solid black;
     display: flex;
+    flex-direction: column;
     align-items: center;
     font-family: "Inter";
-    font-size: 24px;
-    justify-content: space-between;
+    font-size: 1.5rem;
     font-weight: 800;
     transition: 1s;
 }
 
+.meme-info {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.meme-img {
+    width: 10px;
+    height: 10px;
+    transition: 0.7s;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    visibility: hidden;
+}
 
 .memes:hover .cross{
         visibility: visible;
@@ -42,62 +68,58 @@ body {
 
 .meme:hover {
     color: black;
-    height: 80%;
-    align-items: flex-start;
 }
 
 .last-meme {
     border-bottom: none;
 }
 
-.title {
-    width: 100%;
-    height: 10%;
-    border-bottom: 5px double black;
-    font-family: "Inika";
-    margin: 0;
-
-    display: flex;
-    align-items: center;
-    font-size: 36px;
-}
-
 .cross {
     width: 24px;
     height: 24px;
     margin-right: 1%;
+    margin-top: 1%;
+    transition: 0.5s;
     visibility: hidden;
 }
 
-.cross-select{
+.cross-first {
     width: 24px;
     height: 24px;
     margin-right: 1%;
-    display: none;
-}
-
-
-.meme-img {
-    width: 200px;
-    height: 150px;
-    margin-right: 15%;
-    margin-top: 1.5%;
+    margin-top: 1%;
+    transition: 0.5s;
+    transform: rotate(45deg);
     visibility: hidden;
-    transition: 0.7s;
 }
+
+.meme-img-first {
+    width: 350px;
+    height: 250px;
+    transition: 0.7s;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
 
 .meme:hover .meme-img{
     visibility: visible;
-    transform: scale(2);
-    margin-top: 5%;
-}
-
-.memes:hover {
-    color: black;
+    width: 350px;
+    height: 250px;
 }
 
 .meme:hover .cross{
-    display: none;
+    visibility: visible;
+    transform: rotate(45deg);
+}
+
+.memes:hover .cross-first{
+    visibility: visible;
+}
+
+
+.memes:hover {
+    color: black;
 }
 
 .meme:hover .cross-select{
@@ -108,13 +130,33 @@ body {
 
 @media (max-width: 760px){
    .meme {
-    font-size: 20px;
-   }
+        font-size: 1.2rem;
+}
+
+   .meme:hover .meme-img{
+        visibility: visible;
+        width: 250px;
+        height: 150px;
+}
+    .meme-img-first {
+        width: 250px;
+        height: 150px;
+}
 }
 
 @media (max-width: 360px){
     .meme {
-     font-size: 16px;
+     font-size: 1rem;
     }
+
+    .meme:hover .meme-img{
+        visibility: visible;
+        width: 150px;
+        height: 90px;
+}
+    .meme-img-first {
+        width: 150px;
+        height: 90px;
+}
  }
 
